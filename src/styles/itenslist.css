@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #001207;
+    color: #FFF;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001207;
+    margin-bottom: 10px;
+}
+
+.nome {
+    font-size: 40px;
+    margin: 10px 25px 25px;
+}
+
+.icon-container {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.icon {
+    color: #FFF;
+    font-size: 50px;
+}
+
+.footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.conteiner-botao {
+    background-color: #000;
+    border-color: #ccc;
+    border-width: 2px;
+    border-radius: 15px;
+    padding: 15px;
+    width: 100px; /* Largura personalizada */
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+}

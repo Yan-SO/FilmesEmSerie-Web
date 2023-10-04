@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/addContent.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,500;1,700&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Adicioner um novo "TIPO"</h1>
+
+    <div class="item-container">
+        <div class="campo-conteiner">
+            <span class="texto">Nome do Item</span>
+            <input class="text-input" type="text"/>
+        </div>
+    </div>
+
+    <!-- fazer um dropdown -->
+    <div class="item-container">
+        <div class="campo-conteiner">
+            <span class="texto">Escolha uma opção:</span>
+            <div class="dropdown">
+                <div class="dropdown-select"><p> Selecione uma opção</p></div>
+                <div class="dropdown-options">
+                    <div class="dropdown-option"><p>Opção 1</p></div>
+                    <div class="dropdown-option"><p>Opção 2</p></div>
+                    <div class="dropdown-option"><p>Opção 3</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <div class="item-container">
+        <div class="campo-conteiner">
+            <span class="texto">Nota</span>
+            <input class="text-input" type="number"/>
+        </div>
+    </div>
+
+    <!-- Botão "Salvar o Conteúdo" -->
+    <div class="botao style-botao" onclick="console.log('salvado')">
+        <span class="texto-botao">Salvar o Conteúdo</span>
+    </div>
+
+    <script src="../js/addContent.js"></script>
+</body>
+</html>

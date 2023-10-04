@@ -1,0 +1,11 @@
+{
+  "name": "filmesemserie-web",
+  "version": "1.0.0",
+  "description": "font-end web do app FilmesEmSerie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yan Silva de Oliveira",
+  "license": "ISC"
+}
