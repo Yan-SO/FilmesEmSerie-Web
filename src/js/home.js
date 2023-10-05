@@ -2,7 +2,12 @@ const filme = document.getElementById('filme');
 const serie = document.getElementById('serie');
 const desenhos = document.getElementById('desenhos');
 const anime = document.getElementById('anime');
+const usernameTitulo = document.getElementById('username');
+const nome = localStorage.getItem('nome');
+const idUser = localStorage.getItem('id');
 
+usernameTitulo.textContent = nome;
+console.log(`id: ${idUser}, nome: ${nome}`)
 
 //eventos
 
