@@ -10,14 +10,36 @@
     <title>Filmes</title>
 </head>
 <body>
-    <div class="cabecalho">
-        <h1 class="nome">Filmes</h1>
+    <header class="cabecalho">
+        
+        <menu>
+            <h1 id="home" class="titulo home">&#9664; Home</h1>
+            <h1  class="titulo">|</h1>
+            <h1 id="titulo" class="titulo"></h1>
+        </menu>
         <div id="addButton" class="icon-container">
             <i class="icon">+</i>
         </div>
-    </div>
+    </header>
 
-    <!-- Renderização de itens aqui -->
+    <main>
+        <ol id="lista" class="lista">
+            <!-- Renderização de itens aqui -->
+
+            <!-- exemplo de item renderizado -->
+            <!-- 
+            <li class="itemConteiner">
+                <div class="imgConteiner">
+                    <img src="../../assets/Item_sem_imagem.png">
+                </div>
+                <div class="itemConteudo">
+                    <h2 class="nome">konosuba</h2>
+                    <h4 class="status">Status: TERMINADO</h4>
+                    <h3 class="nota">Nota: 10</h3>
+                </div>
+            </li> -->
+        </ol>
+    </main>
 
     <div class="footer">
         <button class="conteiner-botao" onclick="console.log('voltar')">Voltar</button>

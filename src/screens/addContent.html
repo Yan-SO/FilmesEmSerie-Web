@@ -7,44 +7,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,500;1,700&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Cadastrar conteúdo</title>
 </head>
 <body>
 
-    <h1>Adicioner um novo "TIPO"</h1>
+    <header class="cabecalho">
+        <menu>
+            <h1 id="lista" class="titulo lista">&#9664; Lista</h1>
+        </menu>
+        <h1 id="titulo"></h1>
+    </header>
+
 
     <div class="item-container">
         <div class="campo-conteiner">
             <span class="texto">Nome do Item</span>
-            <input class="text-input" type="text"/>
+            <input id="nomeItem" class="text-input" type="text"/>
+            <div id="nomeAlert"></div>
         </div>
     </div>
 
     <!-- fazer um dropdown -->
     <div class="item-container">
         <div class="campo-conteiner">
-            <span class="texto">Escolha uma opção:</span>
+            <span id="tituloCampoStatus" class="texto">Qual o status do :</span>
             <div class="dropdown">
-                <div class="dropdown-select"><p> Selecione uma opção</p></div>
+                <div id="dropdownSelect" class="dropdown-select">Selecione uma opção</div>
                 <div class="dropdown-options">
-                    <div class="dropdown-option"><p>Opção 1</p></div>
-                    <div class="dropdown-option"><p>Opção 2</p></div>
-                    <div class="dropdown-option"><p>Opção 3</p></div>
+                    <div id="interessado" class="dropdown-option">Interessado</div>
+                    <div id="vendo" class="dropdown-option">Vendo</div>
+                    <div id="terminado" class="dropdown-option">Terminado</div>
+                    <div id="largado" class="dropdown-option">Largado</div>
                 </div>
             </div>
+            <div id="stausAlert"></div>
         </div>
     </div>
 
  
     <div class="item-container">
         <div class="campo-conteiner">
-            <span class="texto">Nota</span>
-            <input class="text-input" type="number"/>
+            <span class="texto">Nota de 0 até 10</span>
+            <input id="notaItem" class="text-input" type="number"/>
+            <div id="notaAlert"></div>
         </div>
     </div>
 
+
+    <div class="inputImagemConteiner">
+        <div class="imgConteiner">
+            <img id="imagemPreview" src="../../assets/Item_sem_imagem.png">
+        </div>
+        <input type="file" id="inputImagem" class="inputImagem" accept="image/png">
+    </div>
+
     <!-- Botão "Salvar o Conteúdo" -->
-    <div class="botao style-botao" onclick="console.log('salvado')">
+    <div id="botaoConteine" class="botao-conteine">
         <span class="texto-botao">Salvar o Conteúdo</span>
     </div>
 
