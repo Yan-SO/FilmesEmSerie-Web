@@ -184,7 +184,23 @@ main{
 }
 
 .inputImagem{
-    font-size: 18px;
+    display: none;
+}
+.customFileInput{
     cursor: pointer;
-    margin-top: 8px;
+    padding: 20px;
+    margin: 10px;
+    border-color: #009c3c;
+    border-style: solid;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+.customFileInput:hover {
+    background-color: #009c3c; 
+    color: #000; 
+    border-color: #000;
+    padding-left: 40px;
+    padding-right: 40px;
 }

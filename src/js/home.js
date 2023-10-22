@@ -15,17 +15,17 @@ localStorage.setItem('tipo','')
 
 filme.addEventListener('click',()=>{
     localStorage.setItem('tipo','FILME')
-    window.location.href='./itensList.html'
+    window.location.href='./lista.html'
 });
 serie.addEventListener('click',()=>{
     localStorage.setItem('tipo','SERIE')
-    window.location.href='./itensList.html'
+    window.location.href='./lista.html'
 });
 desenhos.addEventListener('click',()=>{
     localStorage.setItem('tipo','DESENHO')
-    window.location.href='./itensList.html'
+    window.location.href='./lista.html'
 });
 anime.addEventListener('click',()=>{
     localStorage.setItem('tipo','ANIME')
-    window.location.href='./itensList.html'
+    window.location.href='./lista.html'
 });

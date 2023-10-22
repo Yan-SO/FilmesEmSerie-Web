@@ -1,3 +1,5 @@
+import editImage from '../services/editImage.js'
+import imagemPreview from '../services/imagemPreview.js';
 const tituloPagina = document.getElementById('titulo');
 const dropdownSelect = document.querySelector('.dropdown-select');
 const dropdownOptions = document.querySelector('.dropdown-options');
@@ -14,7 +16,7 @@ const notaItem = document.getElementById('notaItem');
 const nomeAlert = document.getElementById('nomeAlert');
 const stausAlert = document.getElementById('stausAlert');
 const notaAlert = document.getElementById('notaAlert');
-const imagemPreview = document.getElementById('imagemPreview');
+const imagemView = document.getElementById('imagemPreview');
 const inputImagem = document.getElementById('inputImagem');
 const urlCadastroItens = 'http://localhost:8080/item';
 
@@ -23,7 +25,11 @@ const urlCadastroItens = 'http://localhost:8080/item';
 localStorage.setItem('status', 'Selecione uma opção');
 
 lista.addEventListener('click', ()=>{
-    window.location.href = './itensList.html';
+    if(localStorage.getItem('listEmpty')=== 'true'){
+        window.location.href = './home.html';
+    }else{
+        window.location.href = './lista.html';
+    }
 })
 
 dropdownSelect.textContent = localStorage.getItem('status');
@@ -90,37 +96,7 @@ botaoConteine.addEventListener('click', () => {
                 .then(resp => resp.json())
                 .then(resp => {
                     if (resp.valor) {
-                        if (inputImagem.files && inputImagem.files[0]) {
-                            const arquivo = inputImagem.files[0];
-
-                            if (arquivo.type === 'image/png') {
-                                const formData = new FormData();
-                                formData.append('image', arquivo);
-                                const urlAddImagem = `http://localhost:8080/item/imagem/add-${resp.id}`;
-
-                                fetch(urlAddImagem, {
-                                    method: 'POST',
-                                    body: formData,
-                                })
-                                .then(response => response.json())
-                                .then(data => {
-                                    if (data.valor) {
-                                        console.log(data);
-                                        window.location.href = './itensList.html';
-                                    } else {
-                                        console.log(data.Message);
-                                    }
-                                })
-                                .catch(error => {
-                                    console.error(error);
-                                });
-                            } else {
-                                alert('Selecione uma imagem PNG válida.');
-                                inputImagem.value = '';
-                            }
-                        } else {
-                            console.log('imagem nao add');
-                        }
+                        editImage(resp.id, inputImagem)
                     } else {
                         console.error(` DEU ERRO: ${resp.Message}`);
                     }
@@ -166,22 +142,4 @@ function validaCampos(){
     }else{return false;}
 }
 
-inputImagem.addEventListener('change',()=>{
-    if (inputImagem.files && inputImagem.files[0]){
-        const arquivo = inputImagem.files[0];
-        if (arquivo.type === 'image/png') {
-            const leitor = new FileReader();
-            leitor.onload = (e)=>{
-                const urlImagem = e.target.result;
-                imagemPreview.src = urlImagem;
-            }
-            leitor.readAsDataURL(arquivo);
-        }else {
-
-            alert('Selecione uma imagem PNG válida.');
-            inputImagem.value = '';
-            imagemPreview.src = '../../assets/Item_sem_imagem.png';
-        }
-    }
-})
-
+imagemPreview(inputImagem, imagemView);
