@@ -1,4 +1,6 @@
 export function changeCampToInput(nomeConteiner, type){
+    localStorage.setItem('editing', true);
+
     const inputText = document.createElement('input')
     const botao = document.createElement('h1')
     
@@ -13,9 +15,8 @@ export function changeCampToInput(nomeConteiner, type){
     inputText.className= 'nome';
     botao.textContent = 'Confirmar';
     botao.className = 'buttonConfirmar';
-    //botao.id = 'buttonConfirmar';
     inputTextConteiner.className= 'inputTextConteiner';
-    //inputTextConteiner.id= 'inputTextConteiner';
+
     
     inputTextConteiner.appendChild(inputText)
     inputTextConteiner.appendChild(botao)

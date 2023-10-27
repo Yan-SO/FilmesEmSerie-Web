@@ -1,4 +1,6 @@
-export default function imagemPreview(inputImagem, imagemPreView){
+import editImage from "./editImage.js";
+
+export default function imagemPreview(inputImagem, imagemPreView, saveLocalStorage){
     inputImagem.addEventListener('change',()=>{
         if (inputImagem.files && inputImagem.files[0]){
             const arquivo = inputImagem.files[0];
@@ -7,6 +9,10 @@ export default function imagemPreview(inputImagem, imagemPreView){
                 leitor.onload = (e)=>{
                     const urlImagem = e.target.result;
                     imagemPreView.src = urlImagem;
+                    if(saveLocalStorage){
+                        localStorage.setItem('imgEdit',urlImagem)
+                        editImage(localStorage.getItem('idItem'),inputImagem);
+                    }
                 }
                 leitor.readAsDataURL(arquivo);
             }else {

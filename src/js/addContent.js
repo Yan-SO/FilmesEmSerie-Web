@@ -96,7 +96,10 @@ botaoConteine.addEventListener('click', () => {
                 .then(resp => resp.json())
                 .then(resp => {
                     if (resp.valor) {
-                        editImage(resp.id, inputImagem)
+                        editImage(resp.id, inputImagem).then(()=>{
+                            window.location.href = './lista.html'
+                        })
+
                     } else {
                         console.error(` DEU ERRO: ${resp.Message}`);
                     }

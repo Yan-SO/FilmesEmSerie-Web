@@ -1,4 +1,4 @@
-export default function editImage(id, inputImagem){
+export default async function editImage(id, inputImagem){
     if (inputImagem.files && inputImagem.files[0]) {
         const arquivo = inputImagem.files[0];
 
@@ -7,7 +7,7 @@ export default function editImage(id, inputImagem){
             formData.append('image', arquivo);
             const urlAddImagem = `http://localhost:8080/item/imagem/add-${id}`;
 
-            fetch(urlAddImagem, {
+            await fetch(urlAddImagem, {
                 method: 'POST',
                 body: formData,
             })
@@ -15,7 +15,6 @@ export default function editImage(id, inputImagem){
             .then(data => {
                 if (data.valor) {
                     console.log(data);
-                    window.location.href = './lista.html';
                 } else {
                     console.log(data.Message);
                 }
