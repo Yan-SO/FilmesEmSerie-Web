@@ -10,8 +10,9 @@ usernameTitulo.textContent = nome;
 console.log(`id: ${idUser}, nome: ${nome}`)
 
 localStorage.setItem('tipo','')
-
+localStorage.setItem('paginaAtual', 0);
 //eventos
+
 
 filme.addEventListener('click',()=>{
     localStorage.setItem('tipo','FILME')
