@@ -204,3 +204,42 @@ main{
     padding-left: 40px;
     padding-right: 40px;
 }
+
+/* Adicionando estilos para resoluções menores (mobile) */
+@media only screen and (max-width: 600px) {
+    .titulo {
+        font-size: 30px;
+    }
+    menu{
+        padding: 0;
+    }
+    .imgConteiner{
+        width: 310px;
+        min-width: 300px;
+        max-width: 100%;
+        margin-top: 16px;
+        border-width: 8px;
+        border-color: #00000025;
+        border-radius: 0;
+    }
+    .titulo{
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    .item-container {
+        margin: 0; 
+    }
+
+    .botao {
+        height: 50px; 
+    }
+
+    .dropdown-select {
+        width: 90%;
+    }
+
+    .imgConteiner {
+        height: 200px; 
+    }
+}

@@ -123,3 +123,55 @@ ol{
 .status {
     color: #000;
 }
+
+@media only screen and (max-width: 600px) {
+    .titulo {
+        font-size: 30px;
+        white-space: nowrap;
+        margin: 0 2.5px;
+    }
+    menu{
+        padding: 0;
+    }
+
+    .icon-container {
+        margin-right: 1rem;
+    }
+    .icon{
+        font-size: 25px;
+        width: 25px;
+    }
+
+    .footer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .conteiner-botao {
+        margin-top: 10px;
+    }
+
+    .itemConteiner {
+        flex-direction: column;
+    }
+
+    .imgConteiner {
+        height: 200px;
+        width: 100%;
+        margin-right: 0;
+        border-radius: 10px;
+        border-width: 0.5rem;
+    }
+
+    .imgConteiner img {
+        border-radius: 10px;
+    }
+
+    .itemConteudo {
+        margin: 10px;
+    }
+
+    .nome, .nota {
+        font-size: 2rem;
+    }
+}

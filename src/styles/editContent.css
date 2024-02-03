@@ -267,3 +267,39 @@ ol{
     display: flex;
     justify-content: space-around;
   }
+@media only screen and (max-width: 600px) {
+    .titulo {
+        font-size: 30px;
+    }
+    .cabecalho{
+        padding: 0;
+    }
+    .botoesConteiner{
+        flex-direction: column-reverse;
+    }
+    .inputTextConteiner{
+        flex-direction: column;
+    }
+    .dropdown-select{
+        width: auto;
+    }
+    .nome, .nota{
+        font-size: large;
+    }
+    .icon-container {
+        margin-right: 1rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .conteiner-botao {
+        margin-top: 10px;
+    }
+
+    .itemConteiner {
+        flex-direction: column;
+    }
+}

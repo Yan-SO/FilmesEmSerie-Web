@@ -24,7 +24,6 @@ const options = {
 } 
 
 //eventos
-numPage.textContent= `${paginaAtual+1} de ${localStorage.getItem('totalPages')}`;
 proximo.addEventListener('click',()=>{
     if((paginaAtual+1) === parseInt(localStorage.getItem('totalPages'))){
         alert('Ultima pagina')
@@ -79,6 +78,12 @@ voltar.addEventListener('click',()=>{
 home.addEventListener('click', ()=>{
     window.location.href='./home.html'
 })
+
+function numeroDePaginas(){if(localStorage.getItem('totalPages')){
+    return localStorage.getItem('totalPages');
+}else{
+    return "0";
+}}
 titulo.textContent = tipo+'S';
 fetch(urlGetContedo, options).then(resp => resp.json()).then(data =>{
     if(data.empty){
@@ -90,8 +95,10 @@ fetch(urlGetContedo, options).then(resp => resp.json()).then(data =>{
         localStorage.setItem('totalPages', data.totalPages);
         console.log(data)
         data.content.forEach(e =>itemLista(e, lista));
+        numPage.textContent= `${paginaAtual+1} de ${numeroDePaginas()}`;
     }
 });
+
 
 addButton.addEventListener('click',()=>{
     window.location.href='./addContent.html'
